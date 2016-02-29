@@ -16,13 +16,13 @@ def token():
     account_sid = os.environ['TWILIO_ACCOUNT_SID']
     api_key = os.environ['TWILIO_API_KEY']
     api_secret = os.environ['TWILIO_API_SECRET']
-    
+
     # Create an Access Token
     token = AccessToken(account_sid, api_key, api_secret)
 
     # Set the Identity of this token
     token.identity = fake.user_name()
-    
+
     # Grant access to Conversations
     grant = ConversationsGrant()
     grant.configuration_profile_sid = os.environ['TWILIO_CONFIGURATION_SID']
